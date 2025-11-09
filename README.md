@@ -1,29 +1,44 @@
-For the article of this repo, please refer to: https://www.swtestacademy.com/deploy-full-stack-application-in-kubernetes/
+# Full-Stack App Deployment with Kubernetes and Minikube
 
-## INSTRUCTIONS
+For the detailed article, refer to:  
+👉 [https://www.swtestacademy.com/deploy-full-stack-application-in-kubernetes/](https://www.swtestacademy.com/deploy-full-stack-application-in-kubernetes/)
 
-### Create backend image
+---
 
-Navigate to backend folder and type:
+## Instructions
 
-``` docker build -t backend . ```
+### 1. Create Backend Image
+```bash
+cd backend
+docker build -t backend .
 
-### Create frontend image
+### 2. Create Frontend Image
+```bash
+cd ../frontend
+docker build -t frontend .
 
-Navigate to frontend folder and type:
-
-``` docker build -t frontend . ```
-
-### Deploy kubernetes
-
-Navigate to kubernetes folder. 
-
-Apply the kubernetes files in following order:
-
-``` kubectl apply -f database.yaml ```
-
-``` kubectl apply -f backend.yaml ```
-
-``` kubectl apply -f frontend.yaml ```
-
-Enjoy!
+### 3. Deploy Kubernetes Resources
+```bash
+cd ../k8s
+kubectl apply -f database.yaml
+kubectl apply -f backend.yaml
+kubectl apply -f frontend.yaml
+### 4. Access the Application
+```bash
+minikube service react-service
+### Project Structure
+fullstackapp/
+├── backend/
+│   ├── Dockerfile
+│   ├── main.py
+│   └── requirements.txt
+├── frontend/
+│   ├── Dockerfile
+│   └── src/
+├── database/
+│   ├── Dockerfile
+│   └── CreateDB.sql
+└── k8s/
+    ├── database.yaml
+    ├── backend.yaml
+    └── frontend.yaml
