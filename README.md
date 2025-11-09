@@ -11,11 +11,13 @@ For the detailed article, refer to:
 ```bash
 cd backend
 docker build -t backend .
+```
 
 ### 2. Create Frontend Image
 ```bash
 cd ../frontend
 docker build -t frontend .
+```
 
 ### 3. Deploy Kubernetes Resources
 ```bash
@@ -23,10 +25,13 @@ cd ../k8s
 kubectl apply -f database.yaml
 kubectl apply -f backend.yaml
 kubectl apply -f frontend.yaml
+```
 ### 4. Access the Application
 ```bash
 minikube service react-service
+```
 ### Project Structure
+```
 fullstackapp/
 ├── backend/
 │   ├── Dockerfile
@@ -42,3 +47,4 @@ fullstackapp/
     ├── database.yaml
     ├── backend.yaml
     └── frontend.yaml
+```
