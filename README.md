@@ -13,9 +13,8 @@ git clone https://github.com/safaa-40/fullstack-k8s-minikube.git
 cd fullstack-k8s-minikube
 ```
 ### 2. Build and Deploy the Database
-```
 Go into the database folder, build the PostgreSQL image, and deploy it first.
-
+```
 cd database
 docker build -t fullstackappdb .
 cd ../k8s
