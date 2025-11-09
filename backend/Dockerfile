@@ -5,7 +5,7 @@ WORKDIR /app
 ADD . /app/
 RUN pip install -r requirements.txt
 
-ENV DATABASE_URI="localhost"
+ENV DATABASE_URI=pg-service
 ENV FLASK_APP=main.py
 
 EXPOSE 5000
